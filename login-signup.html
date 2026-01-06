@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset ="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>login/sign-up-GO TRAVEL</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif; background: linear-gradient(to right, #4facfe, #00f2fe); margin:0; padding:0;
+            display:flex; justify-content:center; align-items:center; height:100vh;}
+            .container{background:white; padding: 20px; border-radius: 8px;box-shadow: 0 0 10px rgba(0,0,0,0.1);width: 250px;}
+            h2{text-align:center; color: #333;}
+            form{display:none; }
+            form.active {display:block;}
+            input{width:94%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:4px;}
+            button{width:100%; padding:10px; background:#4facfe; border:none; color:white; border-radius:4px; cursor:pointer;}
+            buttom:hover{background: #00f2fe;}
+            .toggle{text-align:center; margin-top:10px; }
+            .toggle a{color:#4facfe; text-decoration: none;}
+
+            </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Welcome to GO TRAVEL</h2>
+        <form id="login-form"  class="active">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            </form>
+            <form id="signup-form">
+            <h3>Sign-up</h3>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+            <button type="submit">Sign Up</button>
+            </form>
+            <div class="toggle">
+                <span id="toggle-text">Don't have an account? <a href="#" onclick="toggleform()">Sign-up</a></span>
+            </div>
+        </div>
+        <script>
+            function toggleform(){
+                const loginform = document.getElementById('login-form');
+                const signupform = document.getElementById('signup-form');
+                const toggletext = document.getElementById('toggle-text');
+                if(loginform.classList.contains('active')){
+                    loginform.classList.remove('active');
+                    signupform.classList.add('active');
+                    toggletext.innerHTML = 'Already have an account? <a href="#" onclick="toggleform()">Login</a>';
+                } else {
+                    signupform.classList.remove('active');
+                    loginform.classList.add('active');
+                    toggletext.innerHTML = "Don't have an account? <a href='#' onclick='toggleform()'>Sign Up</a>";
+                }
+            }
+        </script>
+    </body>
+</html>

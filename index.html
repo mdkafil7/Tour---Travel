@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset ="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GO TRAVEL-Your Travel Companion</title>
+    <!-- Adding Bootstrap CSS, Bootstrap Icons, and Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <header class="primary-header">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="mb-0"><b><span class="go-text">GO</span> <img src="travel.png" alt="Travel" style="width: 8%; height: auto;">
+         <span class="travel-text">TRAVEL</span></b></h1>
+      <a href="login-signup.html" class="btn"><i class="fas fa-user-circle"style="font-size:35px;"></i></a>
+    </div>
+   </header>
+
+   <header class="secondary-header bg-white text-dark py-2">
+    <div class="container">
+      <nav class="d-flex justify-content-between">
+        <a href="#" class="text-dark nav-link">
+          <div class="d-flex flex-column align-items-center">
+            <img src="flight.png" alt="Flights" style="width: 48px; height: 48px;">
+            <span><B>Flights</B></span>
+          </div>
+        </a>
+        <a href="#" class="text-dark nav-link">
+          <div class="d-flex flex-column align-items-center">
+            <img src="train.png" alt="Trains" style="width: 48px; height: 48px;">
+            <span><b>Trains</b></span>
+          </div>
+        </a>
+        <a href="#" class="text-dark nav-link">
+          <div class="d-flex flex-column align-items-center">
+            <img src="hotel.png" alt="Hotels" style="width: 48px; height: 48px;">
+            <span><b>Hotels</b></span>
+          </div>
+        </a>
+        <a href="#" class="text-dark nav-link">
+          <div class="d-flex flex-column align-items-center">
+            <img src="bus.png" alt="Buses" style="width: 48px; height: 48px;">
+            <span><b>Buses</b></span>
+          </div>
+        </a>
+      </nav>
+    </div>
+   </header>
+
+   <section class="hero py-5">
+    <div class="container text-center">
+      <div class="search-form mt-5">
+        <!-- Flights Form -->
+        <div id="flights-form" class="form-section">
+          <form class="row g-3 justify-content-center">
+            <div class="row justify-content-center mb-3">
+              <div class="col-auto d-flex align-items-center">
+                <input type="radio" id="one-way" name="trip-type" value="one-way" checked>
+                <label for="one-way"><b>One Way</b></label>
+              </div>
+              <div class="col-auto d-flex align-items-center ms-3">
+                <input type="radio" id="round-trip" name="trip-type" value="round-trip">
+                <label for="round-trip"><b>Round Trip</b></label>
+              </div>
+            </div>
+            <div class="row g-3 justify-content-center">
+              <div class="col-md-3">
+                <input type="text" class="form-control" placeholder="From">
+              </div>
+              <div class="col-md-3">
+                <input type="text" class="form-control" placeholder="To">
+              </div>
+              <div class="col-md-2">
+                <div class="form-floating">
+                  <input type="date" class="form-control" id="departure-date" placeholder="Departure">
+                  <label for="departure-date">Departure</label>
+                </div>
+              </div>
+              <div class="col-md-2" id="return-date-container" style="display: none;">
+                <div class="form-floating">
+                  <input type="date" class="form-control" id="return-date" placeholder="Return">
+                  <label for="return-date">Return</label>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <select class="form-control">
+                  <option>Travellers</option>
+                  <option>1 Adult</option>
+                  <option>1 Adult, 1 Child</option>
+                  <option>1 Adult, 2 Children</option>
+                  <option>1 Adult, 3 Children</option>
+                  <option>2 Adults</option>
+                  <option>2 Adults, 1 Child</option>
+                  <option>2 Adults, 2 Children</option>
+                  <option>2 Adults, 3 Children</option>
+                  <option>3 Adults</option>
+                  <option>3 Adults, 1 Child</option>
+                  <option>3 Adults, 2 Children</option>
+                  <option>3 Adults, 3 Children</option>
+                  <option>4 Adults</option>
+                  <option>4 Adults, 1 Child</option>
+                  <option>4 Adults, 2 Children</option>
+                </select>
+              </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+              <div class="col-md-4">
+                <button type="submit" class="btn btn-primary w-100">Search Flights</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Trains Form -->
+        <div id="trains-form" class="form-section" style="display: none;">
+          <form class="row g-3 justify-content-center">
+            <div class="row g-3 justify-content-center">
+              <div class="col-md-3">
+                <input type="text" class="form-control" placeholder="From ">
+              </div>
+              <div class="col-md-3">
+                <input type="text" class="form-control" placeholder="To ">
+              </div>
+              <div class="col-md-3">
+                <input type="date" class="form-control" placeholder="Date">
+              </div>
+              <div class="col-md-3">
+                <select class="form-control">
+                  <option>Number of Passenger</option>
+                 <option>1 Adult</option>
+                  <option>1 Adult, 1 Child</option>
+                  <option>1 Adult, 2 Children</option>
+                  <option>1 Adult, 3 Children</option>
+                  <option>2 Adults</option>
+                  <option>2 Adults, 1 Child</option>
+                  <option>2 Adults, 2 Children</option>
+                  <option>2 Adults, 3 Children</option>
+                  <option>3 Adults</option>
+                  <option>3 Adults, 1 Child</option>
+                  <option>3 Adults, 2 Children</option>
+                  <option>3 Adults, 3 Children</option>
+                  <option>4 Adults</option>
+                  <option>4 Adults, 1 Child</option>
+                  <option>4 Adults, 2 Children</option>
+                </select>
+              </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+              <div class="col-md-3">
+                <button type="submit" class="btn btn-primary w-100">Search Trains</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Hotels Form -->
+        <div id="hotels-form" class="form-section" style="display: none;">
+          <form class="row g-3 justify-content-center">
+            <div class="row g-3 justify-content-center">
+              <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="City">
+              </div>
+              <div class="col-md-4">
+                <div class="form-floating">
+                  <input type="date" class="form-control" id="checkin-date" placeholder="Check-in">
+                  <label for="checkin-date">Check-in</label>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-floating">
+                  <input type="date" class="form-control" id="checkout-date" placeholder="Check-out">
+                  <label for="checkout-date">Check-out</label>
+                </div>
+              </div>
+            </div>
+            <div class="persons mt-3 row justify-content-center">
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                  <i class="fas fa-user fa-2x mb-.5"></i>
+                  <select class="form-control">
+                    <option>Persons</option>
+                   <option>1 Adult</option>
+                  <option>1 Adult, 1 Child</option>
+                  <option>1 Adult, 2 Children</option>
+                  <option>1 Adult, 3 Children</option>
+                  <option>2 Adults</option>
+                  <option>2 Adults, 1 Child</option>
+                  <option>2 Adults, 2 Children</option>
+                  <option>2 Adults, 3 Children</option>
+                  <option>3 Adults</option>
+                  <option>3 Adults, 1 Child</option>
+                  <option>3 Adults, 2 Children</option>
+                  <option>3 Adults, 3 Children</option>
+                  <option>4 Adults</option>
+                  <option>4 Adults, 1 Child</option>
+                  <option>4 Adults, 2 Children</option>
+                  </select>
+                </div>
+              </div>
+            <div class="row justify-content-center mt-3">
+              <div class="col-md-3">
+                <button type="submit" class="btn btn-primary w-100">Search Hotels</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Buses Form -->
+        <div id="buses-form" class="form-section" style="display: none;">
+          <form class="row g-3 justify-content-center">
+            <div class="row g-3 justify-content-center">
+              <div class="col-md-3">
+                <input type="text" class="form-control" placeholder="From">
+              </div>
+              <div class="col-md-3">
+                <input type="text" class="form-control" placeholder="To">
+              </div>
+              <div class="col-md-3">
+                <input type="date" class="form-control" placeholder="Date">
+              </div>
+              <div class="col-md-3">
+                <select class="form-control">
+                  <option>Number of Seats</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+              <div class="col-md-3">
+                <button type="submit" class="btn btn-primary w-100">Search Buses</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+   </section>
+
+   <section class="features py-5">
+    <div class="container">
+      <h3 class="text-center mb-4">Why Choose GO TRAVEL?</h3>
+      <div class="row">
+        <div class="col-md-4 text-center">
+            <i class="fas fa-plane fa-3x mb-3 "></i>
+            <h5>Flights</h5>
+            <p>Book flights to your favorite destinations at the best prices.</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <i class="fas fa-train fa-3x mb-3"></i>
+            <h5>Trains</h5>
+            <p>Convenient and Reliable Train Booking.</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <i class="fas fa-hotel fa-3x mb-3"></i>
+            <h5>Hotels</h5>
+            <p>Find and book hotels that suit your budget and preferences.</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <i class="bi bi-bus-front-fill fa-3x mb-3"></i>
+            <h5>Buses</h5>
+            <p>Book bus tickets for comfortable and affordable travel.</p>
+        </div>
+      </div>
+   </section>
+    <footer class="bg-dark text-white py-3 text-center">
+        <p>&copy; 2025 GoTravel.All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Function to show the selected form
+      function showForm(formId) {
+        // Hide all forms
+        document.querySelectorAll('.form-section').forEach(form => {
+          form.style.display = 'none';
+        });
+        // Show the selected form
+        document.getElementById(formId).style.display = 'block';
+      }
+
+      // Add event listeners to navigation links
+      document.querySelectorAll('a[href="#"][class*="nav-link"]')[0].addEventListener('click', () => showForm('flights-form'));
+      document.querySelectorAll('a[href="#"][class*="nav-link"]')[1].addEventListener('click', () => showForm('trains-form'));
+      document.querySelectorAll('a[href="#"][class*="nav-link"]')[2].addEventListener('click', () => showForm('hotels-form'));
+      document.querySelectorAll('a[href="#"][class*="nav-link"]')[3].addEventListener('click', () => showForm('buses-form'));
+
+      // Handle one way and round trip radio buttons for flights
+      document.querySelectorAll('input[name="trip-type"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+          if (document.getElementById('one-way').checked) {
+            document.getElementById('return-date-container').style.display = 'none';
+          } else if (document.getElementById('round-trip').checked) {
+            document.getElementById('return-date-container').style.display = 'block';
+          }
+        });
+      });
+
+      // Set default date values to prevent dd-mm-yy placeholder
+      const today = new Date().toISOString().split('T')[0];
+      document.querySelectorAll('input[type="date"]').forEach(input => {
+        input.value = today;
+      });
+
+      // Show flights form by default
+      showForm('flights-form');
+    </script>
+</body>
+</html>

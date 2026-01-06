@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.primary-header {
+    background: transparent;
+}
+.secondary-header {
+    background:white;
+    border-radius: 10px;
+    margin: 10px auto;
+    width: 800px;
+    height: 90px;
+
+}
+.hero {
+    color: white;
+}
+.search-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    min-height:300px;
+}
+
+.features {
+    background: #f6f6f7;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.go-text, .travel-text {
+    color: white;
+    font-family: 'Ariel-Black', sans-serif;
+}
+
+/* Style for radio buttons to look like point-like buttons */
+input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+    background-color: white;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+input[type="radio"]:checked {
+    background-color: #0c80f3;
+}
+
+label {
+    cursor: pointer;
+    margin-bottom: 0;
+    color: rgb(0, 0, 0);
+}
+
+.form-control {
+    height: 100px;
+}
+.form-floating .form-control {
+     height: 100px; }
+     
+.btn-primary {
+    padding: 20px 50px;
+}
