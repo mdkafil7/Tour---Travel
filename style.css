@@ -38,8 +38,7 @@ footer {
     color: white;
     font-family: 'Ariel-Black', sans-serif;
 }
-
-/* Style for radio buttons to look like point-like buttons */
+
 input[type="radio"] {
     appearance: none;
     width: 20px;
